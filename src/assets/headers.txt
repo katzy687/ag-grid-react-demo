@@ -1,9 +1,0 @@
-_id = id
-created = Creation Date
-criticalityFactor = Criticality
-assetType = Type
-env = Env
-isCrownJewel = Is Crown Jewel
-name (asset's) = Asset Name
-name (owner's) = Owner Name
-tags = Tags

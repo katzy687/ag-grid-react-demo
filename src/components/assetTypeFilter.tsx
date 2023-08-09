@@ -1,6 +1,5 @@
 import Select from 'react-select';
 import { getAssets } from "../services/assetsService";
-import React, { useState } from "react";
 
 
 const selectOptions = [
@@ -11,8 +10,6 @@ const selectOptions = [
 ]
 
 const AssetFilterSelect = (props) => {
-
-    const [selected, setSelectedOption] = useState(null);
 
     const handleChange = (currSelected) => {
         // setSelectedOption(selectedOptions);

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { AgGridReact } from "ag-grid-react";
 import { getAssets } from "../services/assetsService";
 import CrownJewelRenderer from "./crownJewelRenderer";

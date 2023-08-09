@@ -1,4 +1,3 @@
-import React from 'react';
 import { AssetRow } from "../services/assetsService"
 
 const OVERRIDE = "OVERRIDE"
