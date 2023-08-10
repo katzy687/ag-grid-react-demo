@@ -155,7 +155,8 @@ const DataTable = (props: DataTableProps) => {
             <AgGridReact
                 gridOptions={gridOptions}
                 rowData={props.assetRows}
-                columnDefs={columnDefs}
+                //@ts-ignore
+                columnDefs={columnDefs} 
                 animateRows={true}
                 ref={gridRef}
                 onGridReady={(params) => setGridApi(params.api)}

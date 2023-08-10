@@ -1,6 +1,6 @@
 
 import { describe, it, assert } from 'vitest'
-import { formatDate, Tag, formatTags, buildAssetRows, AssetRow } from './assetsService';
+import { formatDate, Tag, formatTags, buildAssetRows } from './assetsService';
 import testJsonData from './test_assets.json';
 
 
