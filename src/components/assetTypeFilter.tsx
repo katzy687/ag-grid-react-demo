@@ -11,7 +11,6 @@ interface AssetFilterProps {
     setSelectedStateHandler: Function
 }
 
-
 const AssetFilterSelect = (props: AssetFilterProps) => {
 
     const handleCustomSelectUpdate = (currSelected) => {
@@ -28,7 +27,7 @@ const AssetFilterSelect = (props: AssetFilterProps) => {
                 options={selectOptions}
                 className="basic-multi-select"
                 classNamePrefix="select"
-                placeholder="Filter by assetTypes"
+                placeholder="Filter by Asset Types"
                 onChange={handleCustomSelectUpdate}
             />
         </div>

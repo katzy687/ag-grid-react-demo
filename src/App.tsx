@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <h1>API Grid</h1>
+      <h2><a href="https://www.ag-grid.com/react-data-grid/">AG-Grid-React Demo</a></h2>
       <DataTable assetRows={rowData} />
     </>
   )

@@ -5,3 +5,12 @@
   text-align: center;
 }
 
+
+/* enable basic browser text selection in grid cells */
+/* https://stackoverflow.com/a/51867819 */
+div.ag-root .ag-cell-focus {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}

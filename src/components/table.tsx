@@ -10,12 +10,7 @@ import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 
 
-// Filter Param Definitions
-const nameFilterParams = {
-    filterOptions: ['contains'],
-    debounceMs: 200
-};
-
+// Custom Date Filter Params
 const dateFilterParams = {
     comparator: (filterLocalDateAtMidnight, cellValue) => {
         var dateAsString = cellValue;
@@ -46,22 +41,14 @@ const gridOptions = {
 // Grid Column Settings
 const agGridColumnnDefs = [
     {
-        headerName: "id",
-        field: "id",
-        width: 100
-    },
-    {
         headerName: "Asset Name",
         field: "assetName",
         filter: 'agTextColumnFilter',
-        filterParams: nameFilterParams,
-        floatingFilter: true
-    },
-    {
-        headerName: "Criticality",
-        field: "criticalityFactor",
-        sortable: true,
-        width: 100
+        floatingFilter: true,
+        filterParams: {
+            filterOptions: ['contains'],
+            debounceMs: 200
+        },
     },
     {
         headerName: "Creation Date",
@@ -71,14 +58,10 @@ const agGridColumnnDefs = [
         floatingFilter: true
     },
     {
-        headerName: "Asset Type",
-        field: "assetType",
-        width: 150,
-    },
-    {
         headerName: "Is Crown Jewel",
         field: "isCrownJewel",
         editable: true,
+        width: 150,
         cellRenderer: CrownJewelRenderer,
         cellEditor: 'agSelectCellEditor',
         cellEditorPopup: false,
@@ -89,6 +72,17 @@ const agGridColumnnDefs = [
         },
     },
     {
+        headerName: "Asset Type",
+        field: "assetType",
+        width: 150,
+    },
+    {
+        headerName: "Criticality",
+        field: "criticalityFactor",
+        sortable: true,
+        width: 100
+    },
+    {
         headerName: "Env",
         field: "env",
         width: 100
@@ -96,12 +90,18 @@ const agGridColumnnDefs = [
     {
         headerName: "Owner Name",
         field: "ownerName",
-        width: 100
+        width: 150
+    },
+    {
+        headerName: "id",
+        field: "id",
+        width: 300
     },
     {
         headerName: "Tags",
         field: "tags",
-        width: 100
+        width: 800,
+        cellStyle: { textAlign: 'left' }
     }
 ]
 
