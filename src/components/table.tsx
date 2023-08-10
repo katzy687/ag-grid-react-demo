@@ -157,7 +157,7 @@ const DataTable = (props: DataTableProps) => {
                 gridOptions={gridOptions}
                 rowData={props.assetRows}
                 //@ts-ignore
-                columnDefs={columnDefs} 
+                columnDefs={columnDefs}
                 animateRows={true}
                 ref={gridRef}
                 onGridReady={(params) => setGridApi(params.api)}
@@ -169,4 +169,4 @@ const DataTable = (props: DataTableProps) => {
     );
 };
 
-export default DataTable;
+export { DataTable };
