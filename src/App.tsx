@@ -1,5 +1,5 @@
 import './App.css'
-import DataTable from './components/table';
+import { DataTable } from './components/table';
 import { useState, useEffect } from "react";
 import { getAssetRows } from './services/assetsService';
 import { envConfig } from './config';
