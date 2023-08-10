@@ -70,6 +70,7 @@ const agGridColumnnDefs = [
             cellRenderer: CrownJewelRenderer,
             cellEditorPopup: false,
         },
+        cellStyle: { userSelect: 'none' }
     },
     {
         headerName: "Asset Type",

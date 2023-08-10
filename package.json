@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "buildtest": "tsc && vite build && vitest run"
   },
   "dependencies": {
     "ag-grid-community": "^30.0.6",
