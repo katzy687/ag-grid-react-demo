@@ -2,6 +2,8 @@
 Demo data table grid built with [ag-grid-react](https://www.ag-grid.com/react-data-grid/).
 Additional external filter integrated with [react-select](https://react-select.com/home) drop down component. 
 
+Demo project can be viewed deployed [here](https://natti-agdemo.netlify.app/).
+
 ### Column Customization Details
 - Name - integrated "contains" text filter
 - Created - Date Picker range filter
