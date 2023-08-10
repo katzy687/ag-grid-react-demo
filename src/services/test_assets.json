@@ -1,0 +1,394 @@
+[
+    {
+      "_id": "ff4a61f36fc2b5a6fc54233fb7f19cb3",
+      "created": "2022-01-24T20:15:48.112Z",
+      "criticalityFactor": 15,
+      "enrich": {
+        "assetType": "COMPUTE",
+        "env": "PROD",
+        "isCrownJewel": false,
+        "crownJewelIndicator": "OVERRIDE"
+      },
+      "name": "tf-instance-SAP-app PROD",
+      "owner": {
+        "name": "David"
+      },
+      "region": "us-east-1",
+      "tags": [
+        {
+          "key": "Account",
+          "value": "TravelX Demo"
+        },
+        {
+          "key": "Vesrion",
+          "value": "1"
+        },
+        {
+          "key": "Application",
+          "value": "SAP"
+        },
+        {
+          "key": "Environment",
+          "value": "PROD"
+        },
+        {
+          "key": "Owner",
+          "value": "Dana Briks"
+        },
+        {
+          "key": "Owner Email",
+          "value": "Dana@travelx.com"
+        }
+      ],
+      "type": "Instance"
+    },
+    {
+      "_id": "ff444dd74b30d8f42d96a4993b91053b",
+      "created": "2022-02-24T20:15:48.112Z",
+      "criticalityFactor": null,
+      "enrich": {
+        "assetType": "IAM",
+        "env": "PROD",
+        "isCrownJewel": false,
+        "crownJewelIndicator": "HEURISTIC"
+      },
+      "name": "iamrole-ella-PROD",
+      "owner": {
+        "name": "John"
+      },
+      "region": "us-east-1",
+      "tags": [
+        {
+          "key": "Account",
+          "value": "TravelX Demo"
+        },
+        {
+          "key": "Vesrion",
+          "value": "1"
+        },
+        {
+          "key": "Team",
+          "value": "Devops"
+        },
+        {
+          "key": "Environment",
+          "value": null
+        },
+        {
+          "key": "Owner",
+          "value": "Dana Briks"
+        },
+        {
+          "key": "Owner Email",
+          "value": "Dana@travelx.com"
+        }
+      ],
+      "type": "IamRole"
+    },
+    {
+      "_id": "ff27e3a865b36db6c5536b02ddba7e56",
+      "created": "2022-03-24T20:15:48.112Z",
+      "criticalityFactor": 48,
+      "enrich": {
+        "assetType": "NETWORK",
+        "env": "PROD",
+        "isCrownJewel": false,
+        "crownJewelIndicator": "SKIP"
+      },
+      "name": "default",
+      "owner": {
+        "owner": {
+          "name": "William"
+        }
+      },
+      "region": "eu-central-1",
+      "tags": [
+        {
+          "key": "Owner",
+          "value": "Eric Cantona"
+        },
+        {
+          "key": "Owner Email",
+          "value": "Eric@travelx.com"
+        }
+      ],
+      "type": "SecurityGroup"
+    },
+    {
+      "_id": "fedd9348f0c09ff9e72017edd418d63d",
+      "created": "2022-03-24T20:45:48.112Z",
+      "criticalityFactor": 27,
+      "enrich": {
+        "assetType": "COMPUTE",
+        "env": "DEV",
+        "isCrownJewel": false,
+        "crownJewelIndicator": "SKIP"
+      },
+      "name": "tf-instance-jhon-DEV",
+      "owner": {
+        "owner": {
+          "name": "William"
+        }
+      },
+      "region": "us-east-1",
+      "tags": [
+        {
+          "key": "Account",
+          "value": "TravelX Demo"
+        },
+        {
+          "key": "Vesrion",
+          "value": "1"
+        },
+        {
+          "key": "Environment",
+          "value": "Dev"
+        },
+        {
+          "key": "Owner",
+          "value": "Gary Nevil"
+        },
+        {
+          "key": "Owner Email",
+          "value": "Gary@travelx.com"
+        }
+      ],
+      "type": "Instance"
+    },
+    {
+      "_id": "fe8b96d0fb2d516e2e5220684e7d7fae",
+      "created": "2022-06-24T16:15:48.112Z",
+      "criticalityFactor": 49,
+      "enrich": {
+        "assetType": "NETWORK",
+        "env": "PROD",
+        "isCrownJewel": false,
+        "crownJewelIndicator": "SKIP"
+      },
+      "name": "default",
+      "owner": {
+        "owner": {
+          "name": null
+        }
+      },
+      "region": "us-west-1",
+      "tags": [
+        {
+          "key": "Owner",
+          "value": "Dana Briks"
+        },
+        {
+          "key": "Owner Email",
+          "value": "Dana@travelx.com"
+        }
+      ],
+      "type": "SecurityGroup"
+    },
+    {
+      "_id": "fe17ffc3857409554d426a7d9e2c4477",
+      "created": "2022-07-12T20:00:48.112Z",
+      "criticalityFactor": 11,
+      "enrich": {
+        "assetType": "COMPUTE",
+        "env": "DEV",
+        "isCrownJewel": false,
+        "crownJewelIndicator": "OVERRIDE"
+      },
+      "name": "tf-lambda_Pricing DEV",
+      "owner": {
+        "name": "Jack"
+      },
+      "region": "us-east-1",
+      "tags": [
+        {
+          "key": "Account",
+          "value": "TravelX Demo"
+        },
+        {
+          "key": "Vesrion",
+          "value": "1"
+        },
+        {
+          "key": "Environment",
+          "value": "Dev"
+        },
+        {
+          "key": "Owner",
+          "value": "Paul Schols"
+        },
+        {
+          "key": "Owner Email",
+          "value": "Paul@travelx.com"
+        }
+      ],
+      "type": "Lambda"
+    },
+    {
+      "_id": "fe0e4d23d1b2506c612cc60e64eddc42",
+      "created": "2022-09-01T15:15:48.112Z",
+      "criticalityFactor": 8,
+      "enrich": {
+        "assetType": "IAM",
+        "env": "PROD",
+        "isCrownJewel": false,
+        "crownJewelIndicator": "SKIP"
+      },
+      "name": "iampolicy-sharon-PROD",
+      "owner": {
+        "name": "Thomas"
+      },
+      "region": "us-east-1",
+      "tags": [
+        {
+          "key": "Account",
+          "value": "TravelX Demo"
+        },
+        {
+          "key": "Vesrion",
+          "value": "1"
+        },
+        {
+          "key": "Team",
+          "value": "Devops"
+        },
+        {
+          "key": "Environment",
+          "value": null
+        },
+        {
+          "key": "Owner",
+          "value": "Rose Lavel"
+        },
+        {
+          "key": "Owner Email",
+          "value": "Rose@travelx.com"
+        }
+      ],
+      "type": "IamPolicy"
+    },
+    {
+      "_id": "fe03ec0a47de2190b986aa3bc31d7013",
+      "created": "2022-09-24T20:15:48.112Z",
+      "criticalityFactor": 77,
+      "enrich": {
+        "assetType": "STORAGE",
+        "env": "PROD",
+        "isCrownJewel": true,
+        "crownJewelIndicator": "SKIP"
+      },
+      "name": "volume_Customer PROD",
+      "owner": {
+        "name": "Thomas"
+      },
+      "region": "us-east-1",
+      "tags": [
+        {
+          "key": "Account",
+          "value": "TravelX Demo"
+        },
+        {
+          "key": "Vesrion",
+          "value": "1"
+        },
+        {
+          "key": "Environment",
+          "value": "Production"
+        },
+        {
+          "key": "Owner",
+          "value": "Ryan Gigs"
+        },
+        {
+          "key": "Owner Email",
+          "value": "Ryan@travelx.com"
+        }
+      ],
+      "type": "Volume"
+    },
+    {
+      "_id": "fde2f8151de5414d753346d495023c63",
+      "created": "2022-10-10T13:15:48.112Z",
+      "criticalityFactor": 17,
+      "enrich": {
+        "assetType": "IAM",
+        "env": "PROD",
+        "isCrownJewel": false,
+        "crownJewelIndicator": "SKIP"
+      },
+      "name": "iamgroup-HR-app PROD",
+      "owner": {
+        "name": "Charles"
+      },
+      "region": "us-east-1",
+      "tags": [
+        {
+          "key": "Account",
+          "value": "TravelX Demo"
+        },
+        {
+          "key": "Vesrion",
+          "value": "1"
+        },
+        {
+          "key": "Application",
+          "value": "HR"
+        },
+        {
+          "key": "Environment",
+          "value": "PROD"
+        },
+        {
+          "key": "Owner",
+          "value": "Eric Cantona"
+        },
+        {
+          "key": "Owner Email",
+          "value": "Eric@travelx.com"
+        }
+      ],
+      "type": "IamGroup"
+    },
+    {
+      "_id": "fcef99c17446557eeb8218839af3c039",
+      "created": "2022-11-10T14:15:48.112Z",
+      "criticalityFactor": 14,
+      "enrich": {
+        "assetType": "STORAGE",
+        "env": "PROD",
+        "isCrownJewel": false,
+        "crownJewelIndicator": "SKIP"
+      },
+      "name": "volume-ML-app PROD",
+      "owner": {
+        "name": "Michael"
+      },
+      "region": "us-east-1",
+      "tags": [
+        {
+          "key": "Account",
+          "value": "TravelX Demo"
+        },
+        {
+          "key": "Vesrion",
+          "value": "1"
+        },
+        {
+          "key": "Application",
+          "value": "ML"
+        },
+        {
+          "key": "Environment",
+          "value": "PROD"
+        },
+        {
+          "key": "Owner",
+          "value": "Alex@travelx.com"
+        },
+        {
+          "key": "Owner Email",
+          "value": "Alex@travelx.com"
+        }
+      ],
+      "type": "Volume"
+    }
+  ]

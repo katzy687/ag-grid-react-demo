@@ -1,6 +1,4 @@
 import Select from 'react-select';
-import { getAssets } from "../services/assetsService";
-
 
 const selectOptions = [
     { value: 'COMPUTE', label: 'COMPUTE' },
@@ -9,28 +7,17 @@ const selectOptions = [
     { value: 'STORAGE', label: 'STORAGE' }
 ]
 
-const AssetFilterSelect = (props) => {
+interface AssetFilterProps {
+    setSelectedStateHandler: Function
+}
 
-    const handleChange = (currSelected) => {
-        // setSelectedOption(selectedOptions);
 
-        // Pull all data again and filter
-        getAssets().then((response) => {
-            let filteredRows;
-            if (!currSelected.length) {
-                filteredRows = response;
-            } else {
-                filteredRows = response.filter((row) => {
-                    for (let currOption of currSelected) {
-                        if (currOption.value == row.assetType) {
-                            return true;
-                        }
-                    }
-                    return false;
-                });
-            }
-            props.setRowHandler(filteredRows);
-        });
+const AssetFilterSelect = (props: AssetFilterProps) => {
+
+    const handleCustomSelectUpdate = (currSelected) => {
+        // update state with new asset types
+        const selectedStrings = (currSelected.map(curr => curr.value));
+        props.setSelectedStateHandler(selectedStrings);
     };
 
     return (
@@ -42,7 +29,7 @@ const AssetFilterSelect = (props) => {
                 className="basic-multi-select"
                 classNamePrefix="select"
                 placeholder="Filter by assetTypes"
-                onChange={handleChange}
+                onChange={handleCustomSelectUpdate}
             />
         </div>
     );

@@ -1,4 +1,4 @@
-interface Tag {
+export interface Tag {
   key: string;
   value: string;
 }
@@ -16,7 +16,7 @@ export interface AssetRow {
   tags: string;
 }
 
-function formatTags(tags: Tag[]): string {
+export function formatTags(tags: Tag[]): string {
   const tagStrings = tags.map(tag => `${tag.key}=${tag.value}`);
   return tagStrings.join();
 }
@@ -31,12 +31,9 @@ export function formatDate(date: string): string {
 }
 
 
-async function getAssetRows(): Promise<AssetRow[]> {
-  return fetch('./assets.json').then(response => {
-    return response.json();
-  }).then(data => {
-    const assetRows: AssetRow[] = []
-    for (let currObj of data) {
+export function buildAssetRows(jsonRows: Array<any>): AssetRow[] {
+  const res: AssetRow[] = []
+    for (let currObj of jsonRows) {
       const currRow: AssetRow = {
         id: currObj._id,
         isCrownJewel: currObj.enrich.isCrownJewel,
@@ -49,12 +46,17 @@ async function getAssetRows(): Promise<AssetRow[]> {
         ownerName: currObj.owner.name,
         tags: formatTags(currObj.tags)
       }
-      assetRows.push(currRow);
+      res.push(currRow);
     }
     // sort rows by criticallityFactor for default load
-    assetRows.sort((a, b) => a.criticalityFactor - b.criticalityFactor);
-    return assetRows;
-  });
+    res.sort((a, b) => a.criticalityFactor - b.criticalityFactor);
+    return res;
 }
 
-export { getAssetRows as getAssets };
+export async function getAssetRows(dataUrl): Promise<AssetRow[]> {
+  return fetch(dataUrl).then(response => {
+    return response.json();
+  }).then(data => {
+    return buildAssetRows(data)
+  });
+}
