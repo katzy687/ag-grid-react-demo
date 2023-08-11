@@ -9,7 +9,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest run",
-    "buildtest": "tsc && vite build && vitest run"
+    "buildtest": "tsc && vite build && vitest run",
+    "playwright": "npx playwright test"
   },
   "dependencies": {
     "ag-grid-community": "^30.0.6",
@@ -20,6 +21,7 @@
     "react-select": "^5.7.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.37.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
