@@ -3,5 +3,5 @@ interface ConfigSettings {
 }
 
 export const testConfig: ConfigSettings = {
-    siteUrl: "http://localhost:5173/"
+    siteUrl: "http://localhost:8000/"
 }
