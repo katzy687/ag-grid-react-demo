@@ -27,7 +27,7 @@ export default (props) => {
   const imageSource = `./icons/${image}.png`;
   return (
     <span>
-      <img src={imageSource} />
+      <img src={imageSource} alt={image} />
     </span>
   );
 };

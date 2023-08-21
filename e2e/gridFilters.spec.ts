@@ -69,8 +69,8 @@ test('test is Crown Jewel', async ({ page }) => {
   // fill in text, will have one result
   await page.goto(testConfig.siteUrl);
 
-  // see that current jewel is False icon
-  const imageLocator = await page.getByRole('row', { name: 'iamrole-ella-PROD 2022-02-24 20:15:48 IAM PROD John ff444dd74b30d8f42d96a4993b91053b Account=TravelX Demo,Vesrion=1,Team=Devops,Environment=null,Owner=Dana Briks,Owner Email=Dana@travelx.com' }).getByRole('img').first();
+  // see that FIRST current jewel is False icon
+  const imageLocator = await page.getByAltText('false').first();
   const currImg = await imageLocator.getAttribute("src");
   await expect(currImg?.toLowerCase()).toContain("false");
 
@@ -79,8 +79,9 @@ test('test is Crown Jewel', async ({ page }) => {
   await imageLocator.press("Enter")
   await page.getByRole('option', { name: 'true' }).click();
   
-  // see that jewel is set to Green Icon
-  const newImg = await imageLocator.getAttribute("src");
+  // see that FIRST jewel is set to Green Icon
+  const greenImageLocator = await page.getByAltText('green').first();
+  const newImg = await greenImageLocator.getAttribute("src");
   await expect(newImg?.toLowerCase()).toContain("green");
 
 });
