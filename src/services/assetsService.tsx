@@ -1,3 +1,8 @@
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+dayjs.extend(utc)
+
+
 export interface Tag {
   key: string;
   value: string;
@@ -17,17 +22,19 @@ export interface AssetRow {
 }
 
 export function formatTags(tags: Tag[]): string {
-  const tagStrings = tags.map(tag => `${tag.key}=${tag.value}`);
-  return tagStrings.join();
+  // add all values to set to remove duplicates then return comma separated string
+  const uniqueTags = new Set()
+  tags.forEach(tag => uniqueTags.add(tag.value));
+  return Array.from(uniqueTags).join(", ");
 }
 
-export function formatDate(date: string): string {
+export function formatDate(dateStr: string): string {
+  // use dayjs package and dump UTC result
   // '2022-06-30T12:14:19.299Z' --> '2022-06-30 12:14:19'
-  const isoDate = new Date(date).toISOString();
-  const splitDate = isoDate.split("T");
-  const calendarDate = splitDate[0];
-  const formattedTime = splitDate[1].split(".")[0];
-  return `${calendarDate} ${formattedTime}`
+  const isoDate = new Date(dateStr).toISOString();
+  const dayJsDate = dayjs(isoDate);
+  const formattedDate = dayJsDate.utc().format('YYYY-MM-DD hh:mm:ss');
+  return formattedDate;
 }
 
 

@@ -16,9 +16,11 @@ describe('test date formatter', () => {
 describe('test tag formatter', () => {
   const inputTags: Tag[] = [
     { "key": "key1", "value": "value1" },
-    { "key": "key2", "value": "value2" },
+    { "key": "key2", "value": "value1" },
+    { "key": "key3", "value": "value2" },
+
   ]
-  const expectedTagStr = 'key1=value1,key2=value2'
+  const expectedTagStr = 'value1, value2'
   it('should transform tags', () => {
     const res = formatTags(inputTags);
     assert.equal(res, expectedTagStr);

@@ -2,7 +2,7 @@ import { useRef, useState, useEffect, useCallback } from "react";
 import { AssetRow } from "../services/assetsService";
 import CrownJewelRenderer from "./crownJewelRenderer";
 import { AssetFilterSelect } from "./assetTypeFilter";
-
+import * as timeHelper from "../util/dateHelpers";
 
 import { AgGridReact } from 'ag-grid-react';
 import { GridApi } from 'ag-grid-community';
@@ -10,13 +10,14 @@ import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 
 
+
 // Custom Date Filter Params
 const dateFilterParams = {
+    // docs: https://www.ag-grid.com/javascript-data-grid/filter-date/#date-filter-comparator
     comparator: (filterLocalDateAtMidnight, cellValue) => {
-        var dateAsString = cellValue;
-        if (dateAsString == null) return -1;
-        var cellDate = new Date(dateAsString);
-        if (filterLocalDateAtMidnight.getTime() === cellDate.getTime()) {
+        if (cellValue == null) return -1;
+        const cellDate = new Date(cellValue);
+        if (timeHelper.isDatesSameDay(cellDate, filterLocalDateAtMidnight)) {
             return 0;
         }
         if (cellDate < filterLocalDateAtMidnight) {
@@ -26,8 +27,7 @@ const dateFilterParams = {
             return 1;
         }
         return 0;
-    },
-    inRangeFloatingFilterDateFormat: 'Do MMM YYYY',
+    }
 };
 
 // Main Grid Options
@@ -101,7 +101,7 @@ const agGridColumnnDefs = [
     {
         headerName: "Tags",
         field: "tags",
-        width: 800,
+        width: 500,
         cellStyle: { textAlign: 'left' }
     }
 ]
@@ -130,6 +130,8 @@ const DataTable = (props: DataTableProps) => {
     const doesExternalFilterPass = useCallback(
         // if current node asset type matches one of the selected options, it passes
         (node) => {
+        console.log("running filter callback");
+
             if (node.data) {
                 for (let currSelect of externalSelected) {
                     if (node.data.assetType == currSelect) {

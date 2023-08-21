@@ -1,4 +1,4 @@
-name: Run Tests
+name: Vitest Unit Tests
 
 on:
   push:
